@@ -1,6 +1,6 @@
 package br.upis;
 
-public class Triangulo {
+public class Triangulo implements IFiguraBiDimensional {
 
     private int ladoA;
     private int ladoB;
@@ -25,13 +25,15 @@ public class Triangulo {
         return Math.abs(b - c) < a && a < b + c;
     }
 
-    private int semiPerimeter(int a, int b, int c){
+    @Override
+    public int semiPerimeter(int a, int b, int c){
         return (a + b + c) / 2;
     }
 
+    @Override
     public double calculateArea(){
         int s = semiPerimeter(getLadoA(), getLadoB(),getLadoC());
-        double area = s *(s - getLadoA())*(s -getLadoB())*(s -getLadoC());
+        int area = s *(s - getLadoA())*(s -getLadoB())*(s -getLadoC());
         return Math.sqrt(area);
     }
 
