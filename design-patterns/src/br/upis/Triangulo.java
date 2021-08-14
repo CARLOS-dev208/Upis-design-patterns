@@ -32,8 +32,8 @@ public class Triangulo implements IFiguraBiDimensional {
 
     @Override
     public double calculateArea(){
-        int s = semiPerimeter();
-        int area = s *(s - getLadoA())*(s -getLadoB())*(s -getLadoC());
+        double s = semiPerimeter();
+        double area = s *(s - getLadoA())*(s -getLadoB())*(s -getLadoC());
         return Math.sqrt(area);
     }
 
@@ -63,6 +63,22 @@ public class Triangulo implements IFiguraBiDimensional {
 
     public void setLadoC(int ladoC) {
         if (condicaoExistencia(ladoA, ladoB, ladoC)) {
+            this.ladoC = ladoC;
+        }
+    }
+
+
+    public void setLados(int ladoA, int ladoB) {
+        if (condicaoExistencia(ladoA, ladoB, getLadoC())) {
+            this.ladoA = ladoA;
+            this.ladoB = ladoB;
+        }
+    }
+
+    public void setLados(int ladoA, int ladoB,int ladoC) {
+        if (condicaoExistencia(ladoA, ladoB, ladoC)) {
+            this.ladoA = ladoA;
+            this.ladoB = ladoB;
             this.ladoC = ladoC;
         }
     }
