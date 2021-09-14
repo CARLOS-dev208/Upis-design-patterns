@@ -32,8 +32,8 @@ public class Triangulo implements IFiguraBiDimensional {
 
     @Override
     public double calculateArea(){
-        int s = semiPerimeter();
-        int area = s *(s - getLadoA())*(s -getLadoB())*(s -getLadoC());
+        double s = semiPerimeter();
+        double area = s *(s - getLadoA())*(s -getLadoB())*(s -getLadoC());
         return Math.sqrt(area);
     }
 
